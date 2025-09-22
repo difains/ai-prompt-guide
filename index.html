@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 프롬프트 엔지니어링 완전 가이드 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__content">
+                <div class="header__left">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span>☰</span>
+                    </button>
+                    <h1 class="header__title">AI 프롬프트 엔지니어링 완전 가이드 2025</h1>
+                </div>
+                <div class="header__controls">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="검색..." class="search-input">
+                        <div class="search-navigation hidden" id="searchNavigation">
+                            <span class="search-counter" id="searchCounter">0/0</span>
+                            <button class="search-nav-btn" id="searchPrev">↑</button>
+                            <button class="search-nav-btn" id="searchNext">↓</button>
+                        </div>
+                        <button class="search-clear hidden" id="searchClear">×</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar__content">
+                <div class="sidebar__section">
+                    <h3 class="sidebar__title">Contents</h3>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#overview" class="nav-link active" data-section="overview">AI 프롬프트 엔지니어링 소개</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#prompt-builder" class="nav-link featured" data-section="prompt-builder">🛠️ 프롬프트 빌더</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#basic-techniques" class="nav-link" data-section="basic-techniques">기본 기법들</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#advanced-methods" class="nav-link" data-section="advanced-methods">고급 방법론</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#context-engineering" class="nav-link featured" data-section="context-engineering">🔥 컨텍스트 엔지니어링 (진화)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#technical-integration" class="nav-link featured" data-section="technical-integration">⚡ 기술적 통합 (RAG, Function Calling, MCP)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#real-world-examples" class="nav-link" data-section="real-world-examples">실제 활용 50선</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#quick-tips" class="nav-link" data-section="quick-tips">빠른 팁 컬렉션</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#best-practices" class="nav-link" data-section="best-practices">모범 사례</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#troubleshooting" class="nav-link" data-section="troubleshooting">문제 해결</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="hero" id="hero">
+                    <div class="hero__content">
+                        <h1 class="hero__title">AI 프롬프트 엔지니어링 완전 가이드 2025</h1>
+                        <p class="hero__subtitle">프롬프트 엔지니어링에서 컨텍스트 엔지니어링으로의 진화</p>
+                        <div class="hero__stats">
+                            <div class="stat-item">
+                                <span class="stat-number">NEW</span>
+                                <span class="stat-label">컨텍스트 엔지니어링</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">실제 활용 사례</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2025</span>
+                                <span class="stat-label">최신 기술 동향</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Overview Section -->
+                <section class="content-section" id="overview">
+                    <h2 class="section-title">AI 프롬프트 엔지니어링 소개</h2>
+                    <div class="section-content">
+                        <p>프롬프트 엔지니어링은 AI 모델이 원하는 출력을 생성하도록 지시하는 기술이었지만, 2025년 현재는 <strong>컨텍스트 엔지니어링</strong>으로 진화했습니다. 이는 단순한 텍스트 명령을 넘어 포괄적인 정보 환경을 설계하는 것입니다.</p>
+                        
+                        <div class="evolution-comparison">
+                            <div class="evolution-old">
+                                <h4>🔹 전통적 프롬프트 엔지니어링</h4>
+                                <ul>
+                                    <li>단일 프롬프트 최적화</li>
+                                    <li>정적 명령 작성</li>
+                                    <li>개별 질의-응답 쌍</li>
+                                    <li>텍스트 기반 상호작용</li>
+                                </ul>
+                            </div>
+                            <div class="evolution-new">
+                                <h4>🔸 현대적 컨텍스트 엔지니어링</h4>
+                                <ul>
+                                    <li>포괄적 정보 환경 설계</li>
+                                    <li>동적 컨텍스트 조율</li>
+                                    <li>종단간 시스템 아키텍처</li>
+                                    <li>멀티모달, 실시간, 통합 시스템</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Prompt Builder Section -->
+                <section class="content-section featured-section" id="prompt-builder">
+                    <h2 class="section-title">🛠️ 인터랙티브 프롬프트 빌더</h2>
+                    <div class="section-content">
+                        <p class="lead-text">맞춤형 프롬프트를 쉽게 생성하고 바로 사용해보세요. 선택한 옵션에 따라 최적화된 프롬프트가 자동 생성됩니다.</p>
+                        
+                        <div class="prompt-builder">
+                            <div class="builder-form">
+                                <div class="form-group">
+                                    <label class="form-label" for="promptRole">AI 역할 선택</label>
+                                    <select class="form-control" id="promptRole">
+                                        <option value="">역할을 선택하세요</option>
+                                        <option value="expert">전문가 - 특정 분야의 전문 지식을 가진 역할</option>
+                                        <option value="teacher">교육자 - 교육과 설명에 특화된 역할</option>
+                                        <option value="analyst">분석가 - 데이터 분석과 해석에 특화된 역할</option>
+                                        <option value="creator">크리에이터 - 창작과 아이디어 생성에 특화된 역할</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="promptPurpose">작업 목적</label>
+                                    <select class="form-control" id="promptPurpose">
+                                        <option value="">목적을 선택하세요</option>
+                                        <option value="analyze">분석 - 데이터나 정보를 체계적으로 분석</option>
+                                        <option value="create">생성 - 새로운 콘텐츠나 아이디어 창작</option>
+                                        <option value="summarize">요약 - 복잡한 내용을 간결하게 정리</option>
+                                        <option value="translate">번역 - 언어 간 번역 또는 의미 변환</option>
+                                        <option value="improve">개선 - 기존 내용을 더 나은 형태로 개선</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="promptFormat">출력 형식</label>
+                                    <select class="form-control" id="promptFormat">
+                                        <option value="">형식을 선택하세요</option>
+                                        <option value="list">리스트 - 항목별로 구분된 목록 형태</option>
+                                        <option value="table">표 - 구조화된 표 형태</option>
+                                        <option value="paragraph">단락 - 연속된 문단 형태</option>
+                                        <option value="json">JSON - 구조화된 데이터 형태</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="promptContext">상세 컨텍스트</label>
+                                    <textarea class="form-control" id="promptContext" rows="3" placeholder="구체적인 작업 내용, 제약사항, 예시 등을 입력하세요..."></textarea>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button class="btn btn--primary" id="generatePrompt">프롬프트 생성</button>
+                                    <button class="btn btn--outline" id="clearBuilder">초기화</button>
+                                </div>
+                            </div>
+
+                            <div class="builder-output hidden" id="builderOutput">
+                                <h3>생성된 프롬프트</h3>
+                                <div class="output-content">
+                                    <pre id="generatedPrompt"></pre>
+                                    <div class="output-actions">
+                                        <button class="btn btn--secondary" id="copyPrompt">📋 복사</button>
+                                        <button class="btn btn--primary" id="launchChatGPT">ChatGPT에서 사용</button>
+                                        <button class="btn btn--primary" id="launchClaude">Claude에서 사용</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Basic Techniques Section -->
+                <section class="content-section" id="basic-techniques">
+                    <h2 class="section-title">기본 기법들</h2>
+                    <div class="section-content">
+                        <div class="technique-grid">
+                            <div class="technique-card">
+                                <h3>명확한 지시사항</h3>
+                                <p>구체적이고 직접적인 명령을 사용하세요. AI를 매우 유능하지만 새로운 팀원으로 생각하고 명시적인 지시를 제공하세요.</p>
+                                <div class="example-box">
+                                    <strong>좋은 예:</strong> "이 고객 피드백을 UI/UX, 성능, 기능 요청으로 분류하고 감정과 우선순위를 평가하세요."
+                                </div>
+                            </div>
+                            
+                            <div class="technique-card">
+                                <h3>예시 활용 (Few-shot)</h3>
+                                <p>3-5개의 다양한 예시를 제공하여 AI가 원하는 형태의 출력을 정확히 이해하도록 돕습니다.</p>
+                                <div class="example-box">
+                                    <strong>패턴:</strong> 예시 1 → 결과 1<br>
+                                    예시 2 → 결과 2<br>
+                                    새로운 입력 → ?
+                                </div>
+                            </div>
+                            
+                            <div class="technique-card">
+                                <h3>단계별 추론 (Chain-of-Thought)</h3>
+                                <p>"단계별로 생각하세요"라고 요청하여 복잡한 문제에서 AI의 추론 능력을 향상시킵니다.</p>
+                                <div class="example-box">
+                                    <strong>구조:</strong> 문제 분석 → 단계별 해결 → 결론
+                                </div>
+                            </div>
+                            
+                            <div class="technique-card">
+                                <h3>역할 부여</h3>
+                                <p>AI에게 전문가 역할을 부여하여 특정 영역의 지식과 관점을 활용하도록 합니다.</p>
+                                <div class="example-box">
+                                    <strong>예시:</strong> "당신은 20년 경력의 마케팅 전문가입니다..."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Methods Section -->
+                <section class="content-section" id="advanced-methods">
+                    <h2 class="section-title">고급 방법론</h2>
+                    <div class="section-content">
+                        <div class="method-list">
+                            <div class="method-item">
+                                <h3>XML 태그 구조화</h3>
+                                <p>복잡한 프롬프트를 XML 태그로 구조화하여 각 부분의 역할을 명확히 정의합니다.</p>
+                                <pre><code>&lt;instructions&gt;
+고객 리뷰를 분석하여 감정과 주요 이슈를 추출해주세요.
+&lt;/instructions&gt;
+
+&lt;context&gt;
+모바일 앱 UI 업데이트 후 수집된 피드백
+&lt;/context&gt;
+
+&lt;review&gt;
+"새로운 인터페이스가 너무 복잡해요."
+&lt;/review&gt;</code></pre>
+                            </div>
+                            
+                            <div class="method-item">
+                                <h3>프롬프트 체이닝</h3>
+                                <p>복잡한 작업을 여러 단계로 나누어 각 단계에서 AI가 집중할 수 있도록 합니다.</p>
+                                <div class="chain-steps">
+                                    <div class="step">1단계: 데이터 분석</div>
+                                    <div class="step">2단계: 패턴 식별</div>
+                                    <div class="step">3단계: 전략 수립</div>
+                                    <div class="step">4단계: 실행 계획</div>
+                                </div>
+                            </div>
+                            
+                            <div class="method-item">
+                                <h3>응답 미리 채우기</h3>
+                                <p>AI의 응답 시작 부분을 미리 정의하여 원하는 형식과 톤을 유도합니다.</p>
+                                <div class="prefill-example">
+                                    <strong>사용자:</strong> "SQL 쿼리를 최적화해주세요"<br>
+                                    <strong>AI 시작:</strong> "다음은 최적화된 쿼리입니다:"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Context Engineering Section -->
+                <section class="content-section featured-section" id="context-engineering">
+                    <h2 class="section-title">🔥 컨텍스트 엔지니어링 - 프롬프트 엔지니어링의 진화</h2>
+                    <div class="section-content">
+                        <div class="context-intro">
+                            <p class="lead-text">컨텍스트 엔지니어링은 단순한 프롬프트 최적화를 넘어 <strong>포괄적인 정보 환경을 설계</strong>하는 현대적 접근법입니다.</p>
+                        </div>
+                        
+                        <div class="concept-comparison">
+                            <div class="concept-card traditional">
+                                <h3>전통적 접근법</h3>
+                                <div class="concept-content">
+                                    <h4>초점</h4>
+                                    <p>단일 프롬프트 최적화</p>
+                                    
+                                    <h4>접근 방식</h4>
+                                    <p>정적 명령 작성</p>
+                                    
+                                    <h4>범위</h4>
+                                    <p>개별 질의-응답 쌍</p>
+                                    
+                                    <h4>한계</h4>
+                                    <p>텍스트 기반 상호작용에 제한</p>
+                                </div>
+                            </div>
+                            
+                            <div class="concept-card modern">
+                                <h3>컨텍스트 엔지니어링</h3>
+                                <div class="concept-content">
+                                    <h4>초점</h4>
+                                    <p>포괄적 정보 환경 설계</p>
+                                    
+                                    <h4>접근 방식</h4>
+                                    <p>동적 컨텍스트 조율</p>
+                                    
+                                    <h4>범위</h4>
+                                    <p>종단간 시스템 아키텍처</p>
+                                    
+                                    <h4>역량</h4>
+                                    <p>멀티모달, 실시간, 통합 시스템</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Integration Section -->
+                <section class="content-section featured-section" id="technical-integration">
+                    <h2 class="section-title">⚡ 기술적 통합 (RAG, Function Calling, MCP)</h2>
+                    <div class="section-content">
+                        <div class="tech-intro">
+                            <p class="lead-text">현대 AI 시스템은 단순한 텍스트 생성을 넘어 <strong>외부 데이터, 도구, 시스템과의 실시간 통합</strong>을 통해 진정한 지능형 어시스턴트로 발전했습니다.</p>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <div class="tech-header">
+                                    <h3>🔍 RAG (Retrieval-Augmented Generation)</h3>
+                                    <span class="tech-badge">정보 검색 + 생성</span>
+                                </div>
+                                <div class="tech-content">
+                                    <p><strong>설명:</strong> 대규모 언어 모델과 외부 지식 검색을 결합하여 정확하고 최신의 정보를 제공합니다.</p>
+                                    <p><strong>활용 사례:</strong> AI가 학습 데이터에 없는 특정, 현재, 또는 독점 정보에 접근해야 할 때</p>
+                                    <div class="implementation-details">
+                                        <strong>구현:</strong>
+                                        <ul>
+                                            <li>벡터 데이터베이스 + 의미적 검색</li>
+                                            <li>컨텍스트 주입 + 응답 생성</li>
+                                            <li>실시간 정보 업데이트</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-header">
+                                    <h3>🛠️ Function Calling</h3>
+                                    <span class="tech-badge">도구 연결</span>
+                                </div>
+                                <div class="tech-content">
+                                    <p><strong>설명:</strong> AI가 외부 도구, API, 시스템과 프로그래밍 방식으로 상호작용할 수 있게 합니다.</p>
+                                    <p><strong>활용 사례:</strong> 텍스트 생성을 넘어 데이터베이스 쿼리, 계산, API 호출 등의 작업을 수행할 때</p>
+                                    <div class="implementation-details">
+                                        <strong>구현:</strong>
+                                        <ul>
+                                            <li>함수 정의 + 매개변수 검증</li>
+                                            <li>실행 조율 + 결과 통합</li>
+                                            <li>오류 처리 + 재시도 로직</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <div class="tech-header">
+                                    <h3>🎛️ MCP (Model Control Protocol)</h3>
+                                    <span class="tech-badge">모델 조율</span>
+                                </div>
+                                <div class="tech-content">
+                                    <p><strong>설명:</strong> AI 모델 상호작용과 조율을 위한 프로토콜로, 복잡한 워크플로우를 관리합니다.</p>
+                                    <p><strong>활용 사례:</strong> 여러 AI 모델이나 정교한 제어 흐름이 필요한 복잡한 워크플로우</p>
+                                    <div class="implementation-details">
+                                        <strong>구현:</strong>
+                                        <ul>
+                                            <li>프로토콜 표준 + 모델 라우팅</li>
+                                            <li>상태 관리 + 세션 제어</li>
+                                            <li>워크플로우 조율</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Real-world Examples Section -->
+                <section class="content-section" id="real-world-examples">
+                    <h2 class="section-title">실제 활용 50선</h2>
+                    <div class="section-content">
+                        <p>비즈니스 현장에서 바로 적용할 수 있는 실제 활용 사례를 카테고리별로 정리했습니다. 각 카드를 클릭하면 상세한 구현 방법을 확인할 수 있습니다.</p>
+
+                        <div class="examples-container">
+                            <!-- Business & Marketing Category -->
+                            <div class="example-category">
+                                <h3 class="category-title">📊 비즈니스 & 마케팅</h3>
+                                <div class="examples-grid">
+                                    <div class="example-card" data-example="business-1">
+                                        <div class="card-header">
+                                            <h4>고객 서비스 AI 에이전트</h4>
+                                            <span class="category-badge">비즈니스 & 마케팅</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>복잡한 고객 문의를 실시간 데이터와 함께 처리하는 AI 구축</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">효율성 60% 향상</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="에세이 사전 평가/피드백">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-card" data-example="business-2">
+                                        <div class="card-header">
+                                            <h4>영업 리드 분석 시스템</h4>
+                                            <span class="category-badge">비즈니스 & 마케팅</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>CRM 데이터와 시장 인텔리전스 통합 분석으로 리드 품질 향상</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">전환율 35% 증가</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="슬라이드/노트 대화식 복습">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="example-card" data-example="business-3">
+                                        <div class="card-header">
+                                            <h4>마케팅 캠페인 최적화</h4>
+                                            <span class="category-badge">비즈니스 & 마케팅</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>다채널 데이터 분석과 실시간 개인화 전략</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">ROI 4.8배 달성</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="시험 대비 요약집 만들기">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="example-card" data-example="business-4">
+                                        <div class="card-header">
+                                            <h4>고객 세분화 분석</h4>
+                                            <span class="category-badge">비즈니스 & 마케팅</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>행동 데이터 기반 동적 고객 세그먼트 생성</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">마케팅 적중률 75%</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="강의 슬라이드 기반 퀴즈 생성">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="example-card" data-example="business-5">
+                                        <div class="card-header">
+                                            <h4>경쟁사 모니터링 AI</h4>
+                                            <span class="category-badge">비즈니스 & 마케팅</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>실시간 경쟁사 동향 추적 및 대응 전략 자동 제안</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">모니터링 범위 500% 확장</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="취업 전략 설계">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Development & Technical Category -->
+                            <div class="example-category">
+                                <h3 class="category-title">💻 개발 & 기술</h3>
+                                <div class="examples-grid">
+                                    <div class="example-card" data-example="dev-1">
+                                        <div class="card-header">
+                                            <h4>코드 리뷰 AI 어시스턴트</h4>
+                                            <span class="category-badge">개발 & 기술</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>프로젝트 컨텍스트를 이해하는 종합적 코드 리뷰</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">버그 발견율 80% 향상</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="코드 리뷰 프롬프트">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="example-card" data-example="dev-2">
+                                        <div class="card-header">
+                                            <h4>자동 테스트 생성</h4>
+                                            <span class="category-badge">개발 & 기술</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>비즈니스 로직을 이해하는 포괄적 테스트 케이스 자동 생성</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">테스트 커버리지 95%</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="테스트 생성 프롬프트">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="example-card" data-example="dev-3">
+                                        <div class="card-header">
+                                            <h4>시스템 아키텍처 분석</h4>
+                                            <span class="category-badge">개발 & 기술</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>성능 메트릭 기반 병목지점 식별 및 개선 방안 제시</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">성능 개선 65%</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="아키텍처 분석 프롬프트">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Content & Creative Category -->
+                            <div class="example-category">
+                                <h3 class="category-title">🎨 콘텐츠 & 창작</h3>
+                                <div class="examples-grid">
+                                    <div class="example-card" data-example="content-1">
+                                        <div class="card-header">
+                                            <h4>브랜드 맞춤형 콘텐츠 생성</h4>
+                                            <span class="category-badge">콘텐츠 & 창작</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>브랜드 가이드라인과 타겟 오디언스 분석 기반 콘텐츠</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">브랜드 일관성 95%</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="브랜드 콘텐츠 프롬프트">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="example-card" data-example="content-2">
+                                        <div class="card-header">
+                                            <h4>SEO 최적화 글쓰기</h4>
+                                            <span class="category-badge">콘텐츠 & 창작</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>키워드 연구와 검색 의도 분석 통합 콘텐츠</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">검색 노출 180% 증가</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="SEO 글쓰기 프롬프트">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="example-card" data-example="content-3">
+                                        <div class="card-header">
+                                            <h4>소셜미디어 콘텐츠 자동화</h4>
+                                            <span class="category-badge">콘텐츠 & 창작</span>
+                                        </div>
+                                        <div class="card-content">
+                                            <p>플랫폼별 최적화와 트렌드 반영 자동 콘텐츠</p>
+                                            <div class="card-footer">
+                                                <span class="improvement-badge">참여율 220% 증가</span>
+                                                <button class="btn btn--sm copy-btn" data-copy="소셜미디어 프롬프트">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Tips Section -->
+                <section class="content-section" id="quick-tips">
+                    <h2 class="section-title">빠른 팁 컬렉션</h2>
+                    <div class="section-content">
+                        <p>클릭 가능한 팁 카드를 통해 상세한 구현 가이드를 확인하세요.</p>
+                        
+                        <div class="tips-grid">
+                            <div class="tip-card clickable" data-tip-index="0">
+                                <h3>🏗️ 컨텍스트부터 시작하기</h3>
+                                <p>명령이 아닌 정보 환경을 먼저 설계하세요</p>
+                            </div>
+                            <div class="tip-card clickable" data-tip-index="1">
+                                <h3>🔄 동적 컨텍스트 업데이트</h3>
+                                <p>사용자 상호작용에 따라 컨텍스트를 진화시키세요</p>
+                            </div>
+                            <div class="tip-card clickable" data-tip-index="2">
+                                <h3>📚 다층 데이터 소스</h3>
+                                <p>구조화/비구조화 데이터를 통합하세요</p>
+                            </div>
+                            <div class="tip-card clickable" data-tip-index="3">
+                                <h3>🎯 명확한 역할 정의</h3>
+                                <p>AI에게 전문가 페르소나를 부여하세요</p>
+                            </div>
+                            <div class="tip-card clickable" data-tip-index="4">
+                                <h3>📝 구체적인 예시 제공</h3>
+                                <p>원하는 출력의 명확한 예시를 포함하세요</p>
+                            </div>
+                            <div class="tip-card clickable" data-tip-index="5">
+                                <h3>🏷️ XML 태그 활용</h3>
+                                <p>복잡한 구조를 태그로 명확히 구분하세요</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Best Practices Section -->
+                <section class="content-section" id="best-practices">
+                    <h2 class="section-title">모범 사례</h2>
+                    <div class="section-content">
+                        <div class="best-practices-grid">
+                            <div class="practice-item">
+                                <h3>🏗️ 확장 가능한 설계</h3>
+                                <p>처음부터 확장성을 고려한 아키텍처를 설계하세요. 단일 프롬프트에서 시작하더라도 향후 컨텍스트 확장을 염두에 두어야 합니다.</p>
+                            </div>
+                            
+                            <div class="practice-item">
+                                <h3>🛡️ 견고한 오류 처리</h3>
+                                <p>예상치 못한 입력이나 시스템 오류에 대비한 폴백 메커니즘을 구축하세요. 사용자 경험이 중단되지 않도록 대안 경로를 마련하세요.</p>
+                            </div>
+                            
+                            <div class="practice-item">
+                                <h3>📊 사용량 모니터링</h3>
+                                <p>컨텍스트 사용 패턴과 성능을 지속적으로 모니터링하여 최적화 기회를 찾으세요. 로그 분석을 통해 개선점을 발굴하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Troubleshooting Section -->
+                <section class="content-section" id="troubleshooting">
+                    <h2 class="section-title">문제 해결</h2>
+                    <div class="section-content">
+                        <div class="troubleshooting-list">
+                            <div class="trouble-item">
+                                <h3>🤖 AI가 잘못된 정보를 생성할 때</h3>
+                                <div class="solution">
+                                    <h4>해결 방법:</h4>
+                                    <ul>
+                                        <li>"확실하지 않다면 '모르겠습니다'라고 답하세요" 명시</li>
+                                        <li>RAG를 활용하여 신뢰할 수 있는 외부 데이터 소스 연결</li>
+                                        <li>응답에 대한 신뢰도나 출처를 표시하도록 요구</li>
+                                        <li>검증 가능한 정보만 사용하도록 제한</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="trouble-item">
+                                <h3>📝 일관성 없는 출력 형식</h3>
+                                <div class="solution">
+                                    <h4>해결 방법:</h4>
+                                    <ul>
+                                        <li>JSON, XML 등 구조화된 출력 형식 강제</li>
+                                        <li>예시를 통해 기대 형식을 명확히 제시</li>
+                                        <li>출력 검증 로직 추가</li>
+                                        <li>템플릿 기반 응답 생성 활용</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="trouble-item">
+                                <h3>⚡ 응답 속도가 느릴 때</h3>
+                                <div class="solution">
+                                    <h4>해결 방법:</h4>
+                                    <ul>
+                                        <li>불필요한 컨텍스트 정보 제거</li>
+                                        <li>캐싱을 활용하여 반복적인 계산 최소화</li>
+                                        <li>병렬 처리 가능한 작업 분리</li>
+                                        <li>프롬프트 체이닝으로 복잡한 작업을 단계별로 분할</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay hidden" id="mobileOverlay"></div>
+
+    <!-- Modal for Tips -->
+    <div class="modal hidden" id="tipModal">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 class="modal__title" id="modalTitle"></h2>
+                <button class="modal__close" id="modalClose">×</button>
+            </div>
+            <div class="modal__body">
+                <div class="modal__text" id="modalText"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Examples -->
+    <div class="modal hidden" id="exampleModal">
+        <div class="modal__overlay" id="exampleModalOverlay"></div>
+        <div class="modal__content modal__content--large">
+            <div class="modal__header">
+                <h2 class="modal__title" id="exampleModalTitle"></h2>
+                <button class="modal__close" id="exampleModalClose">×</button>
+            </div>
+            <div class="modal__body">
+                <div class="modal__tabs">
+                    <button class="modal__tab active" data-tab="traditional">기존 방식</button>
+                    <button class="modal__tab" data-tab="context">컨텍스트 엔지니어링</button>
+                </div>
+                <div class="modal__tab-content">
+                    <div class="tab-panel active" id="traditionalPanel">
+                        <div class="approach-content" id="traditionalContent"></div>
+                    </div>
+                    <div class="tab-panel" id="contextPanel">
+                        <div class="approach-content" id="contextContent"></div>
+                        <div class="implementation-info" id="implementationInfo"></div>
+                    </div>
+                </div>
+                <div class="modal__category" id="exampleModalCategory"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
