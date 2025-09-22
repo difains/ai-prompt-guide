@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 john
+Copyright (c) 2025 AI Prompt Engineering Guide Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,60 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## 🤖 AI 프롬프트 엔지니어링 완전 가이드 2025
+
+### 📋 라이선스 요약
+
+이 프로젝트는 **MIT 라이선스** 하에 배포됩니다. 이는 다음을 의미합니다:
+
+✅ **허용 사항**
+- ✨ **상업적 사용**: 상업 프로젝트에서 자유롭게 사용 가능
+- 🔄 **수정**: 코드를 수정하고 개선할 수 있음
+- 📦 **배포**: 원본 또는 수정된 버전을 자유롭게 배포
+- 🔒 **비공개 사용**: 비공개 프로젝트에서도 사용 가능
+- 📄 **라이선스 변경**: 수정된 버전에 다른 라이선스 적용 가능
+
+❗ **의무 사항**
+- 📋 **라이선스 포함**: 저작권 고지와 라이선스 전문을 포함해야 함
+- 🏷️ **저작권 표시**: 원작자의 저작권을 명시해야 함
+
+🚫 **제한 사항**
+- 💔 **무보증**: 소프트웨어는 "있는 그대로" 제공되며 품질을 보증하지 않음
+- ⚖️ **책임 제한**: 사용으로 인한 손해에 대해 작성자가 책임지지 않음
+
+### 🤝 기여 시 동의 사항
+
+이 레포지토리에 기여하시는 경우, 다음에 동의하는 것으로 간주됩니다:
+
+1. **📝 기여 내용의 MIT 라이선스 적용**: 귀하의 기여 내용도 MIT 라이선스 하에 배포됩니다.
+
+2. **🎯 원작자 권리 존중**: 기존 저작권 고지를 유지하고 존중합니다.
+
+3. **✨ 양질의 기여**: 프로젝트의 품질과 목적에 부합하는 기여를 제공합니다.
+
+### 📞 라이선스 관련 문의
+
+라이선스와 관련하여 궁금한 점이 있으시면:
+
+- 📧 **GitHub Issues**: [이슈 생성](../../issues/new?template=license-question.md)
+- 💬 **GitHub Discussions**: [토론 참여](../../discussions)
+- 📚 **MIT 라이선스 FAQ**: [자세히 보기](https://opensource.org/licenses/MIT)
+
+### 🙏 감사 인사
+
+이 프로젝트는 다음의 오픈소스 프로젝트들에 영감을 받았습니다:
+
+- **OpenAI**: ChatGPT 및 GPT 모델
+- **Anthropic**: Claude AI 시스템
+- **Google**: Gemini AI 플랫폼
+- **Mozilla**: 웹 표준 및 접근성 가이드라인
+- **GitHub**: 협업 및 버전 관리 플랫폼
+
+모든 기여자와 사용자분들께 깊은 감사를 표합니다. 🚀
+
+---
+
+**Last updated**: September 2025
